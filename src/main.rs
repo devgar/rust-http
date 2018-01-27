@@ -1,6 +1,6 @@
 extern crate reqwest;
 
-use std::io::Read;
+use std::io::copy;
 
 
 fn request(){
@@ -11,9 +11,7 @@ fn request(){
         println!("{}: {}", header.name(), header.value_string());
     }
 
-    let mut buf = String::new();
-    response.read_to_string(&mut buf).expect("Failed to read response");
-    println!("{}", buf);
+    copy(&mut response, &mut std::io::stdout()).expect("Failed to read response");
 }
 
 fn main(){
