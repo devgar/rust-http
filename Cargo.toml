@@ -1,0 +1,8 @@
+[package]
+name = "http-test"
+version = "0.1.0"
+authors = ["Edgar Albalate <dev.gardo@gmail.com>"]
+
+[dependencies]
+
+reqwest = "0.8.*"
